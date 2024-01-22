@@ -32,7 +32,10 @@ function Header() {
     marginLeft: 4,
   });
 
-  const CustomButtonWrapper = styled(Box)``;
+  const CustomButtonWrapper = styled(Box)`
+    margin: 0 5% 0 auto;
+  `;
+
   return (
     <>
       <StyledHeader>
@@ -51,9 +54,10 @@ function Header() {
             </div>
           </Component>
           <Search />
-          <Box>
-            <CustomButtons></CustomButtons>
-          </Box>
+
+          <CustomButtonWrapper>
+            <CustomButtons />
+          </CustomButtonWrapper>
         </Toolbar>
       </StyledHeader>
     </>
