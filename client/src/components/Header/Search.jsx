@@ -1,4 +1,4 @@
-import { InputBase, Box, Input } from "@mui/material";
+import { InputBase, Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import React from "react";
 import styled from "styled-components";
@@ -20,7 +20,8 @@ function Search() {
 
   const SearchIconWrapper = styled(Box)`
     color: blue;
-    padding: 3px;
+    padding: 5px;
+    display: flex;
   `;
 
   return (
