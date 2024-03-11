@@ -1,18 +1,22 @@
 import express, { Router, urlencoded } from "express";
 import bodyParser from "body-parser";
-
 import Connection from "./database/db.js";
 import dotenv from "dotenv";
-import Router from "./model/routes/route.js";
+import router from "./routes/route.js";
 import DefaultData from "./default.js";
 import cors from "cors";
 dotenv.config();
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json({ extended: true }));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/", Router);
+app.use("/", router);
 
 const PORT = 8000;
 const USERNAME = process.env.DB_USERNAME;

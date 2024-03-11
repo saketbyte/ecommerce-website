@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { useState } from "react";
-
+import { useState, useContext } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 
+import { DataContext } from "../../context/DataProvider";
 // components
+import Profile from "./Profile";
 import LoginDialog from "../login/LoginDialog";
 const Wrapper = styled(Box)`
   align-items: center;
@@ -44,6 +45,7 @@ const Container = styled(Box)`
 
 function CustomButtons() {
   const [open, setOpen] = useState(false);
+  const { account, setAccount } = useContext(DataContext);
 
   const handleOpen = () => {
     setOpen(true);
@@ -51,9 +53,14 @@ function CustomButtons() {
 
   return (
     <Wrapper>
-      <LoginButton variant="contained" onClick={() => handleOpen()}>
-        Login
-      </LoginButton>
+      {account ? (
+        <Profile account={account} setAccount={setAccount}></Profile>
+      ) : (
+        <LoginButton variant="contained" onClick={() => handleOpen()}>
+          Login
+        </LoginButton>
+      )}
+
       <Typography style={{ width: 135 }}>Become a Seller</Typography>
       <Typography style={{ width: 135 }}>More</Typography>
 

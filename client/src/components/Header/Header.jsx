@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Box, Typography, Link } from "@mui/material";
+import { AppBar, Toolbar, Box, Typography } from "@mui/material";
 import styled from "styled-components";
 
 //components
