@@ -7,6 +7,7 @@ import { getProductReducer } from "./reducers/productReducer";
 
 const reducer = combineReducers({
   //   cart: cartReducer,
+  // this getProducts is being shown in our extension which we use for the useSelector Hook!
   getProducts: getProductReducer,
   //   getProductDetails: getProductDetailsReducer,
 });

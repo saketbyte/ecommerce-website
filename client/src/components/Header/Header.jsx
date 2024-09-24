@@ -40,11 +40,15 @@ function Header() {
     <>
       <StyledHeader>
         <Toolbar style={{ height: 55 }}>
+          {/* Component is a box wrapper which will render everything to LEFT of search bar */}
           <Component>
+            {/* Using to display Flipkart Logo image */}
             <img src={logoURL} alt="logo" style={{ width: 75 }} />
 
+            {/* This div is used to render Explore, Plus and Plus in Flex direction */}
             <div style={{ display: "flex" }}>
               <Subheading>
+                {/* &nbsp; gives space. */}
                 Explore&nbsp;
                 <Box component="span" style={{ color: "#FFE500" }}>
                   Plus
@@ -53,8 +57,11 @@ function Header() {
               <PlusImage src={subURL} alt="sublogo" />
             </div>
           </Component>
+          {/* Search is a self closing component imported from Search.jsx */}
           <Search />
 
+          {/* Custom Buttons are created in CustomButtons.jsx and rendered together below */}
+          {/* Custom Button Wrapper is giving margin from right and left to all icons right of SB */}
           <CustomButtonWrapper>
             <CustomButtons />
           </CustomButtonWrapper>

@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import Banner from "./Banner";
 import { Box } from "@mui/material";
 import { styled } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Component = styled(Box)`
   padding: 10px 10px;
@@ -14,6 +14,9 @@ const Component = styled(Box)`
 
 function Home() {
   const dispatch = useDispatch();
+
+  const { products } = useSelector((state) => state.getProducts);
+
   //  we use useDispatch to send a dispatch object here for getProducts funciton - export const getProducts = () => async (dispatch) => {
   useEffect(() => {
     dispatch(getProducts());
