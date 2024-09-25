@@ -27,8 +27,8 @@ const MidSection = () => {
     <>
       <Wrapper container lg={12} sm={12} md={12} xs={12}>
         {imageURL.map((image) => (
-          <Grid lg={4} sm={4} md={12} xs={12}>
-            <img src={image} alt="Banner pic" style={{ width: "100%" }} />
+          <Grid item={true} lg={4} sm={4} md={12} xs={12}>
+            <img src={image} alt="Banner" style={{ width: "100%" }} />
           </Grid>
         ))}
       </Wrapper>

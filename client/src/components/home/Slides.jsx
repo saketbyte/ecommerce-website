@@ -3,6 +3,8 @@ import "react-multi-carousel/lib/styles.css";
 import Countdown from "react-countdown";
 import { Box, Typography, Button, Divider, styled } from "@mui/material";
 
+import { Link } from "react-router-dom";
+
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -94,13 +96,16 @@ const Slide = ({ products, title, timer }) => {
         slidesToSlide={1}
         keyBoardControl={true}
         centerMode={true}>
+        {/* Added Link Component for adding routing ability */}
         {products.map((product) => (
-          <Box textAlign="center" style={{ padding: "25px 15px" }}>
-            <Image src={product.url} alt="product" />
-            <Text style={{ fontWeight: 600, color: "#212121" }}>{product.title.shortTitle}</Text>
-            <Text style={{ color: "green" }}>{product.discount}</Text>
-            <Text style={{ fontWeight: 300, color: "#212121", opacity: "0.6" }}>{product.tagline}</Text>
-          </Box>
+          <Link to={`product/${product.id}`} style={{ textDecoration: "None" }}>
+            <Box textAlign="center" style={{ padding: "25px 15px" }}>
+              <Image src={product.url} alt="product" />
+              <Text style={{ fontWeight: 600, color: "#212121" }}>{product.title.shortTitle}</Text>
+              <Text style={{ color: "green" }}>{product.discount}</Text>
+              <Text style={{ fontWeight: 300, color: "#212121", opacity: "0.6" }}>{product.tagline}</Text>
+            </Box>
+          </Link>
         ))}
       </Carousel>
     </Component>

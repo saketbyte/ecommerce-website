@@ -1,24 +1,22 @@
 import React from "react";
 import { AppBar, Toolbar, Box, Typography } from "@mui/material";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 //components
 
 import Search from "./Search";
 import CustomButtons from "./CustomButtons";
 
 function Header() {
-  const logoURL =
-    "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png";
-  const subURL =
-    "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png";
+  const logoURL = "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png";
+  const subURL = "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png";
 
   const StyledHeader = styled(AppBar)`
     background: #2874f0;
     height: 55px;
   `;
 
-  const Component = styled(Box)`
+  const Component = styled(Link)`
     margin-left: 12%;
     line-height: 0;
   `;
@@ -43,7 +41,7 @@ function Header() {
       <StyledHeader>
         <Toolbar style={{ height: 55 }}>
           {/* Component is a box wrapper which will render everything to LEFT of search bar */}
-          <Component>
+          <Component to="/" style={{ textDecoration: "None", color: "inherit" }}>
             {/* Using to display Flipkart Logo image */}
             <img src={logoURL} alt="logo" style={{ width: 75 }} />
 

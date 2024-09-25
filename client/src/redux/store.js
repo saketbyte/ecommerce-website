@@ -3,14 +3,14 @@ import { thunk } from "redux-thunk";
 import { composeWithDevTools } from "@redux-devtools/extension";
 
 // import { cartReducer } from "./reducers/cartReducer";
-import { getProductReducer } from "./reducers/productReducer";
+import { getProductReducer, getProductDetailsReducer } from "./reducers/productReducer";
 
 const reducer = combineReducers({
   //   cart: cartReducer,
   // this getProducts is being shown in our extension which we use for the useSelector Hook!
   // key name: actual function name
   getProducts: getProductReducer,
-  //   getProductDetails: getProductDetailsReducer,
+  getProductDetails: getProductDetailsReducer,
 });
 
 const middleware = [thunk];
