@@ -8,8 +8,10 @@ import Search from "./Search";
 import CustomButtons from "./CustomButtons";
 
 function Header() {
-  const logoURL = "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png";
-  const subURL = "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png";
+  const logoURL =
+    "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png";
+  const subURL =
+    "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png";
 
   const StyledHeader = styled(AppBar)`
     background: #2874f0;

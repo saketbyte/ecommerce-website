@@ -111,8 +111,11 @@ function LoginDialog({ open, setOpen }) {
   const { setAccount } = useContext(DataContext);
 
   const handleClose = () => {
+    // closes
     setOpen(!open);
+    // account updates
     toggleAccount(accountInitialValues.login);
+    // if error, then removed.
     setError(false);
   };
 
@@ -130,7 +133,7 @@ function LoginDialog({ open, setOpen }) {
 
   const loginUser = async () => {
     let response = await authenticateLogin(login);
-    console.log("REsponse is", response);
+    console.log("Response is", response);
     if (response.status === 200) {
       console.log(response.status);
       handleClose();
@@ -160,7 +163,7 @@ function LoginDialog({ open, setOpen }) {
             {account.view === "login" ? (
               <Wrapper>
                 <TextField variant="standard" onChange={(e) => onValueChange(e)} name="username" label="Enter User Name" />
-                <TextField variant="standard" onChange={(e) => onValueChange(e)} name="password" label="Enter Password" />
+                <TextField variant="standard" onChange={(e) => onValueChange(e)} type="password" name="password" label="Enter Password" />
                 {error && <Error>Please enter valid username and password!</Error>}
                 <Text variant="standard"> By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</Text>
 
@@ -175,7 +178,7 @@ function LoginDialog({ open, setOpen }) {
                 <TextField variant="standard" name="lastname" onChange={(e) => onInputChange(e)} label="Enter Last Name" />
                 <TextField variant="standard" name="username" onChange={(e) => onInputChange(e)} label="Enter Username" />
                 <TextField variant="standard" name="email" onChange={(e) => onInputChange(e)} label="Enter Email" />
-                <TextField variant="standard" name="password" onChange={(e) => onInputChange(e)} label="Enter Password" />
+                <TextField variant="standard" type="password" name="password" onChange={(e) => onInputChange(e)} label="Enter Password" />
                 <TextField variant="standard" name="phone" onChange={(e) => onInputChange(e)} label="Enter Mobile Number" />
                 <LoginButton onClick={() => signupUser()}>Continue</LoginButton>
               </Wrapper>

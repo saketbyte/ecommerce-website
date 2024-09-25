@@ -12,6 +12,7 @@ import LoginDialog from "../login/LoginDialog";
 //
 const Wrapper = styled(Box)`
   align-items: center;
+  /* justify-content: space-between; */
   // to bring it in one line, flex it.
   display: flex;
   margin: 0 3% 0 auto;

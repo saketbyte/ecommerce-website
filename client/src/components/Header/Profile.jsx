@@ -13,12 +13,11 @@ const Logout = styled(Typography)`
 `;
 
 const Profile = ({ account, setAccount }) => {
-  //state
+  //state to show log out button or not
   const [open, setOpen] = useState(false);
 
   const handleClick = (event) => {
     //Get the element that triggered the event:
-
     setOpen(event.currentTarget);
   };
 
@@ -33,7 +32,7 @@ const Profile = ({ account, setAccount }) => {
   return (
     <>
       <Box onClick={handleClick}>
-        <Typography style={{ marginTop: 2 }}>{account}</Typography>
+        <Typography style={{ marginTop: 2, marginLeft: 8 }}>{account}</Typography>
       </Box>
       <Component anchorEl={open} open={Boolean(open)} onClose={handleClose}>
         <MenuItem
