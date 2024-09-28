@@ -21,8 +21,12 @@ export const getProducts = () => async (dispatch) => {
 
 export const getProductDetails = (id) => async (dispatch) => {
   try {
-    // dispatch sends the call to our reducers
+    // dispatch sends the payload to our reducers
+
+    // it dispatches GET_PRODUCT_DETAILS_REQUEST to indicate loading has started
     dispatch({ type: actionType.GET_PRODUCT_DETAILS_REQUEST });
+    // it dispatches either GET_PRODUCT_DETAILS_SUCCESS
+    // or GET_PRODUCT_DETAILS_FAIL, depending on whether the API call success.
 
     const { data } = await axios.get(`${URL}/product/${id}`);
 

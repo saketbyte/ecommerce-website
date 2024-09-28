@@ -13,7 +13,8 @@ export const products = [
       discount: "47%",
     },
     quantity: 1,
-    description: "This electric kettle from Pigeon will soon become a travelers best friend, a hostelite saviour and an answer to all the midnight cravings. With this handy appliance, you can boil water and use it to make instant noodles, packet soup, coffee and green tea.",
+    description:
+      "This electric kettle from Pigeon will soon become a travelers best friend, a hostelite saviour and an answer to all the midnight cravings. With this handy appliance, you can boil water and use it to make instant noodles, packet soup, coffee and green tea.",
     discount: "Extra 10% Off",
     tagline: "Deal of the day",
   },
@@ -31,7 +32,8 @@ export const products = [
       discount: "40%",
     },
     quantity: 1,
-    description: "This non-stick sandwich toaster .easy to use and very handy. Directly hold over flame to make tasty toasts and toasted sandwiches. Specially designed by keeping your needs in mind, the sandwich maker makes whatever youre doing simpler, smarter and better",
+    description:
+      "This non-stick sandwich toaster .easy to use and very handy. Directly hold over flame to make tasty toasts and toasted sandwiches. Specially designed by keeping your needs in mind, the sandwich maker makes whatever youre doing simpler, smarter and better",
     discount: "From 99+5% Off",
     tagline: "Pestige, Nova & more",
   },
@@ -94,6 +96,7 @@ export const products = [
   {
     id: "product6",
     url: "https://rukminim1.flixcart.com/image/150/150/kk01pjk0/fan/d/d/l/tiktik-quiet-portable-table-fan-zigma-original-imafzg7ftzuckpad.jpeg?q=70",
+
     detailUrl: "https://rukminim1.flixcart.com/image/416/416/kk01pjk0/fan/d/d/l/tiktik-quiet-portable-table-fan-zigma-original-imafzg7ftzuckpad.jpeg?q=70",
     title: {
       shortTitle: "Table Fans",
@@ -105,7 +108,8 @@ export const products = [
       discount: "46%",
     },
     quantity: 1,
-    description: 'Table Fan. Perfect size fan for use on a table, desk or in an RV. Whisper quiet, powerful airflow and reliable operation in a compact 6" size. Two adjustable speeds to customize airflow: high or low settings. Tough break-resistant ABS plastic blades. ',
+    description:
+      'Table Fan. Perfect size fan for use on a table, desk or in an RV. Whisper quiet, powerful airflow and reliable operation in a compact 6" size. Two adjustable speeds to customize airflow: high or low settings. Tough break-resistant ABS plastic blades. ',
     discount: "Minimum 40% Off",
     tagline: "Top Selling",
   },
@@ -123,7 +127,8 @@ export const products = [
       discount: "59%",
     },
     quantity: 1,
-    description: "Let music brighten up your mood anytime, anywhere with the boAt 235v2 Fast Charging Bluetooth Headset. This Bluetooth headset features a Call Vibration Alert, a Fast Charging Technology, and Easy Access Controls to listen to and manage your favorite music with ease.",
+    description:
+      "Let music brighten up your mood anytime, anywhere with the boAt 235v2 Fast Charging Bluetooth Headset. This Bluetooth headset features a Call Vibration Alert, a Fast Charging Technology, and Easy Access Controls to listen to and manage your favorite music with ease.",
     discount: "Minimum 50% Off",
     tagline: "Grab Now!",
   },
