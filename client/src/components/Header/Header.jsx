@@ -47,13 +47,8 @@ const MenuButton = styled(IconButton)(({ theme }) => ({
 }))
 
 const HamburgerSlice = styled(List)`
-
-
+	width: 200px;
 `
-
-
-
-
 
 const Header = () => {
 	const logoURL = "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png"
@@ -76,11 +71,11 @@ const Header = () => {
 						<Menu />
 					</MenuButton>
 					<Drawer open={open} onClose={handleClose}>
-						<HamburgerSlice>
-              <ButtonBase>
-              <CustomButtons />
-              </ButtonBase>
-           </HamburgerSlice>
+						<HamburgerSlice onClick={handleClose}>
+							<ButtonBase>
+								<CustomButtons />
+							</ButtonBase>
+						</HamburgerSlice>
 					</Drawer>
 					{/* Component is a box wrapper which will render everything to LEFT of search bar */}
 					<Component to='/' style={{ textDecoration: "None", color: "inherit" }}>
@@ -96,7 +91,7 @@ const Header = () => {
 									Plus
 								</Box>
 							</Subheading>
-							<PlusImage src={subURL} alt='sublogo' />
+							<PlusImage src={subURL} alt='sub-logo' />
 						</div>
 					</Component>
 					{/* Search is a self closing component imported from Search.jsx */}

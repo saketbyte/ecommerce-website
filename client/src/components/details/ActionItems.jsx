@@ -1,6 +1,10 @@
-import React from "react";
-import { Box, Button, styled } from "@mui/material";
-import { ShoppingCart as Cart, FlashOn as Flash } from "@mui/icons-material";
+import React, { useState } from "react"
+import { Box, Button, styled } from "@mui/material"
+import { ShoppingCart as Cart, FlashOn as Flash } from "@mui/icons-material"
+
+import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { addToCart } from "../../redux/actions/cartActions"
 
 // const LeftContainer = styled(Box)`
 //   min-width: 40%;
@@ -20,28 +24,38 @@ const LeftContainer = styled(Box)`
 	@media (max-width: 960px) {
 		padding: 20px 10px; // Adjust padding for smaller screens
 	}
-`;
+`
 
 const Image = styled("img")({
 	width: "100%", // Make the image responsive
 	height: "auto", // Maintain the aspect ratio
 	margin: "0 auto", // Center the image
-	display: "block", // Ensures the image is block-level for proper centering
-});
+	display: "block" // Ensures the image is block-level for proper centering
+})
 
 const StyledButton = styled(Button)`
 	width: 48%;
 	height: 50px;
 	border-radius: 2px;
-`;
+`
+
 const ActionItems = ({ product }) => {
+	const navigate = useNavigate()
+	const dispatch = useDispatch()
+	const [quantity, setQuantity] = useState(1)
+
+	const addItemToCart = () => {
+		dispatch(addToCart(product.id, quantity))
+		navigate("/cart")
+	}
+
 	return (
 		<LeftContainer>
 			<Box style={{ width: "90%", padding: "15px 20px", border: "2px solid #f0f0f0" }}>
 				<Image src={product.detailUrl} alt='product' />
 			</Box>
 			<Box style={{ marginTop: 10 }}>
-				<StyledButton variant='contained' style={{ marginRight: 10, background: "#ff9f00" }}>
+				<StyledButton variant='contained' onClick={() => addItemToCart()} style={{ marginRight: 10, background: "#ff9f00" }}>
 					<Cart /> Add to Cart
 				</StyledButton>
 				<StyledButton variant='contained' style={{ background: "#fb541b" }}>
@@ -50,7 +64,7 @@ const ActionItems = ({ product }) => {
 				</StyledButton>
 			</Box>
 		</LeftContainer>
-	);
-};
+	)
+}
 
-export default ActionItems;
+export default ActionItems
