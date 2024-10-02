@@ -1,21 +1,12 @@
-import React, { useState } from "react"
-import { Box, Button, styled } from "@mui/material"
-import { ShoppingCart as Cart, FlashOn as Flash } from "@mui/icons-material"
+import React, { useState } from "react";
+import { Box, Button, styled } from "@mui/material";
+import { ShoppingCart as Cart, FlashOn as Flash } from "@mui/icons-material";
 
-import { useNavigate } from "react-router-dom"
-import { useDispatch } from "react-redux"
-import { addToCart } from "../../redux/actions/cartActions"
-import { payUsingPaytm } from "../../service/api"
-import { post } from "../../utils/paytm"
-
-// const LeftContainer = styled(Box)`
-//   min-width: 40%;
-//   padding: 40px 0 0 80px;
-// `;
-
-// const Image = styled("img")({
-//   padding: "15px",
-// });
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/actions/cartActions";
+import { payUsingPaytm } from "../../service/api.js";
+import { post } from "../../utils/paytm";
 
 const LeftContainer = styled(Box)`
 	margin-left: 15px;
@@ -26,41 +17,42 @@ const LeftContainer = styled(Box)`
 	@media (max-width: 960px) {
 		padding: 20px 10px; // Adjust padding for smaller screens
 	}
-`
+`;
 
 const Image = styled("img")({
 	width: "100%", // Make the image responsive
 	height: "auto", // Maintain the aspect ratio
 	margin: "0 auto", // Center the image
 	display: "block" // Ensures the image is block-level for proper centering
-})
+});
 
 const StyledButton = styled(Button)`
 	width: 48%;
 	height: 50px;
 	border-radius: 2px;
-`
+`;
 
 const ActionItems = ({ product }) => {
-	const navigate = useNavigate()
-	const dispatch = useDispatch()
-	const [quantity, setQuantity] = useState(1)
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const [quantity, setQuantity] = useState(1);
 
 	const addItemToCart = () => {
-		dispatch(addToCart(product.id, quantity))
-		navigate("/cart")
-	}
+		dispatch(addToCart(product.id, quantity));
+		navigate("/cart");
+	};
 
 	const buyNow = async () => {
-		let response = await payUsingPaytm({ amount: 200, email: "saket.sk.kumar@gmail.com" })
+		let response = await payUsingPaytm({ amount: 200, email: "saket.sk.kumar@gmail.com" });
 
 		let information = {
 			action: "https://securegw-stage.paytm.in/order/process",
 			params: response
-		}
+		};
+		console.log("ActionItems:", information);
 
-		post(information)
-	}
+		post(information);
+	};
 
 	return (
 		<LeftContainer>
@@ -77,7 +69,7 @@ const ActionItems = ({ product }) => {
 				</StyledButton>
 			</Box>
 		</LeftContainer>
-	)
-}
+	);
+};
 
-export default ActionItems
+export default ActionItems;
