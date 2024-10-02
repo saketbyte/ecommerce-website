@@ -46,7 +46,8 @@ const ActionItems = ({ product }) => {
 		let response = await payUsingPaytm({ amount: 200, email: "saket.sk.kumar@gmail.com" });
 
 		let information = {
-			action: "https://securegw-stage.paytm.in/order/process",
+			// action: "https://securegw-stage.paytm.in/order/process",
+			action: `https://securegw-stage.paytm.in/theia/api/v1/showPaymentPage?orderID=${response.orderId}`,
 			params: response
 		};
 		console.log("ActionItems:", information);
