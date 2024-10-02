@@ -1,9 +1,9 @@
-import { Typography, Box, Button, styled } from "@mui/material"
-import React from "react"
-import { addEllipsis } from "../../utils/source-utls"
-import GroupedButton from "./ButtonGroup"
-import { removeFromCart } from "../../redux/actions/cartActions"
-import { useDispatch } from "react-redux"
+import { Typography, Box, Button, styled } from "@mui/material";
+import React from "react";
+import { addEllipsis } from "../../utils/source-utls";
+import GroupedButton from "./ButtonGroup";
+import { removeFromCart } from "../../redux/actions/cartActions";
+import { useDispatch } from "react-redux";
 
 const Component = styled(Box)`
 	padding: 30px 135px;
@@ -11,40 +11,41 @@ const Component = styled(Box)`
 	display: flex;
 
 	background-color: #fff;
-`
+`;
 
 const LeftComponent = styled(Box)`
 	margin: 20px;
 	display: flex;
 	flex-direction: column;
-`
+`;
 const SellerText = styled(Typography)`
 	color: #878787;
 	font-size: 13px;
 	margin-top: 10px;
-`
+`;
 
 const Remove = styled(Button)`
 	margin-top: 40px;
 	font-size: 16px;
 	color: #000;
 	font-weight: 600;
-`
+`;
 
 const CartItem = ({ item }) => {
-	const fassured = "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png"
+	const fassured = "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png";
 
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 
 	const removeItemFromCart = (id) => {
-		dispatch(removeFromCart(id))
-	}
+		dispatch(removeFromCart(id));
+	};
 	return (
 		<>
 			<Component>
 				<LeftComponent>
 					<img src={item.url} height='110px' width='110px' alt='prod' />
-					<GroupedButton />
+					{/* Here are the increase and decrease quantity buttons */}
+					<GroupedButton product={item} />
 				</LeftComponent>
 				<Box style={{ margin: "20px" }}>
 					<Typography>{addEllipsis(item.title.longTitle)}</Typography>
@@ -71,7 +72,7 @@ const CartItem = ({ item }) => {
 				</Box>
 			</Component>
 		</>
-	)
-}
+	);
+};
 
-export default CartItem
+export default CartItem;

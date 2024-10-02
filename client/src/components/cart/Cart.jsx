@@ -49,7 +49,7 @@ const buyNow = async () => {
 		action: `https://securegw-stage.paytm.in/theia/api/v1/showPaymentPage?orderID=${response.orderId}`,
 		params: response
 	};
-	console.log("ActionItems:", information);
+	// console.log("ActionItems:", information);
 
 	post(information);
 };
@@ -79,7 +79,6 @@ const Cart = () => {
 				</Container>
 			) : (
 				<div>
-					{" "}
 					<EmptyCart />
 				</div>
 			)}

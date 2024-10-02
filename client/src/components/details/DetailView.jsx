@@ -15,27 +15,25 @@ const Component = styled(Box)`
 const Container = styled(Grid)(({ theme }) => ({
 	background: "#FFFFFF",
 	display: "flex",
-	flexWrap: "wrap", // Allows content to wrap on smaller screens
-	justifyContent: "flex-start", // Aligns everything to the left
+	flexWrap: "wrap", // to wrap on smaller screens
+	justifyContent: "flex-start",
 	[theme.breakpoints.down("md")]: {
-		flexDirection: "row", // Stack items vertically on smaller screens
-	},
+		flexDirection: "row"
+	}
 }));
 
 const RightContainer = styled(Grid)`
 	margin-top: 50px;
 	margin-left: 20px;
 	overflow: hidden;
-	flex-grow: 1; // Allow it to grow within available space
-	/* flex-basis: 50%; // Set base width to 50% to avoid overlap */
-	min-width: 300px; // Ensure it doesn't shrink below a certain width
+	flex-grow: 1;
+	min-width: 300px;
 	& > p {
 		margin-top: 10px;
 	}
 
 	@media (max-width: 960px) {
-		margin-top: 20px; // Adjust margin for smaller screens
-		padding-left: 0; // Remove padding on smaller screens for better spacing
+		margin-top: 20px;
 	}
 `;
 
@@ -49,8 +47,6 @@ const DetailView = () => {
 	useEffect(() => {
 		if (product && id !== product.id) dispatch(getProductDetails(id));
 	}, [dispatch, id, product, loading]);
-
-	// console.log("DETAILs", product);
 
 	return (
 		<Component>
