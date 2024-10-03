@@ -2,13 +2,14 @@ import paytmchecksum from "../paytm/PaytmChecksum.js";
 import { paytmMerchantKey } from "../index.js";
 import * as formidable from "formidable";
 import https from "https";
+import { v4 as uuid } from "uuid";
 
 let paytmParams = {
 	"requestType": "Payment",
 	"mid": process.env.PAYTM_MID,
 	"websiteName": process.env.PAYTM_WEBSITE,
 	"orderId": uuid(),
-	"callbackUrl": callbackURL,
+	"callbackUrl": "https://ecommerce-website-kappa-sandy.vercel.app/callback",
 	"txnAmount": "150.00",
 	"custId": process.env.PAYTM_CUST_ID
 };

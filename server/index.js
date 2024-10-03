@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 import router from "./routes/route.js";
 import DefaultData from "./default.js";
 import cors from "cors";
-import { v4 as uuid } from "uuid";
 dotenv.config();
 
 const app = express();
@@ -41,7 +40,6 @@ export const paytmMerchantKey = process.env.PAYTM_MERCHANT_KEY;
 
 export let paytmParams = {};
 // let callbackURL = "https://localhost:8000/callback";
-let callbackURL = "https://ecommerce-website-kappa-sandy.vercel.app/callback";
 
 // paytmParams = {
 // 	"requestType": "Payment",
