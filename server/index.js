@@ -10,6 +10,15 @@ dotenv.config();
 
 const app = express();
 app.use(cors());
+
+app.use(
+	cors({
+		origin: ["https://ecommerce-website-h1qr-9iebacq0c-samriddh-singhs-projects.vercel.app/"],
+		methods: ["POST", "GET"],
+		credentials: true
+	})
+);
+
 app.use(
 	bodyParser.urlencoded({
 		extended: true
