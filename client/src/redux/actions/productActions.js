@@ -5,11 +5,11 @@ import * as actionType from "../constants/productConstant";
 // this double arrow function is from thunk
 // const URL = "http://localhost:8000";
 // const URL = "https://ecommerce-website-kappa-sandy.vercel.app";
-const URL = "https://ecommerce-website-server-q5x5qrruf-samriddh-singhs-projects.vercel.app/";
+const URL = "https://ecommerce-website-server-q5x5qrruf-samriddh-singhs-projects.vercel.app";
 
 export const getProducts = () => async (dispatch) => {
 	try {
-		const { data } = await axios.get(`${URL}/products`);
+		const { data } = await axios.get(`${URL}/products/`);
 		// type of request to differentiate between different actions done in reducer and value
 		dispatch({ type: actionType.GET_PRODUCTS_SUCCESS, payload: data });
 	} catch (error) {
