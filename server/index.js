@@ -31,10 +31,7 @@ app.use("/", router);
 
 const PORT = process.env.PORT || 8000;
 
-const USERNAME = process.env.DB_USERNAME;
-const PASSWORD = process.env.DB_PASSWORD;
-
-Connection(USERNAME, PASSWORD);
+Connection(process.env.DB_URL);
 
 app.listen(PORT, () => console.log(`Server is running on PORT: ${PORT}`));
 
@@ -46,12 +43,12 @@ export let paytmParams = {};
 // let callbackURL = "https://localhost:8000/callback";
 let callbackURL = "https://ecommerce-website-kappa-sandy.vercel.app/callback";
 
-paytmParams = {
-	"requestType": "Payment",
-	"mid": process.env.PAYTM_MID,
-	"websiteName": process.env.PAYTM_WEBSITE,
-	"orderId": uuid(),
-	"callbackUrl": callbackURL,
-	"txnAmount": "150.00",
-	"custId": process.env.PAYTM_CUST_ID
-};
+// paytmParams = {
+// 	"requestType": "Payment",
+// 	"mid": process.env.PAYTM_MID,
+// 	"websiteName": process.env.PAYTM_WEBSITE,
+// 	"orderId": uuid(),
+// 	"callbackUrl": callbackURL,
+// 	"txnAmount": "150.00",
+// 	"custId": process.env.PAYTM_CUST_ID
+// };

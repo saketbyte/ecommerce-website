@@ -1,12 +1,17 @@
-// import paytmchecksum from "../paytm/PaytmChecksum.js"
-// import { paytmParams, paytmMerchantKey } from "../index.js"
-// import * as formidable from "formidable"
-// import https from "https"
-
 import paytmchecksum from "../paytm/PaytmChecksum.js";
-import { paytmParams, paytmMerchantKey } from "../index.js";
+import { paytmMerchantKey } from "../index.js";
 import * as formidable from "formidable";
 import https from "https";
+
+let paytmParams = {
+	"requestType": "Payment",
+	"mid": process.env.PAYTM_MID,
+	"websiteName": process.env.PAYTM_WEBSITE,
+	"orderId": uuid(),
+	"callbackUrl": callbackURL,
+	"txnAmount": "150.00",
+	"custId": process.env.PAYTM_CUST_ID
+};
 
 export const addPaymentGateway = async (request, response) => {
 	const paytmCheckSum = await paytmchecksum.generateSignature(paytmParams, paytmMerchantKey);
