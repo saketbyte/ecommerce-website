@@ -34,7 +34,9 @@ DefaultData();
 export const paytmMerchantKey = process.env.PAYTM_MERCHANT_KEY;
 
 export let paytmParams = {};
-let callbackURL = "https://localhost:8000/callback";
+// let callbackURL = "https://localhost:8000/callback";
+let callbackURL = "https://ecommerce-website-kappa-sandy.vercel.app/callback";
+
 paytmParams = {
 	"requestType": "Payment",
 	"mid": process.env.PAYTM_MID,
