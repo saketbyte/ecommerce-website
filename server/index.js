@@ -30,11 +30,13 @@ app.use("/", router);
 
 const PORT = process.env.PORT || 8000;
 
-Connection(String(process.env.DB_URL));
+Connection(String(process.env.MONGODB_URI));
 
 app.listen(PORT, () => console.log(`Server is running on PORT: ${PORT}`));
 
 DefaultData();
+
+export default app;
 
 // export const paytmMerchantKey = process.env.PAYTM_MERCHANT_KEY;
 // export let paytmParams = {};
