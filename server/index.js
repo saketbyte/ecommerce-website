@@ -14,7 +14,7 @@ app.use(
 	cors({
 		origin: ["https://www.ecommerce-website-server-q5x5qrruf-samriddh-singhs-projects.vercel.app/"],
 		methods: ["POST", "GET"],
-		credentials: true
+		credentials: false
 	})
 );
 
