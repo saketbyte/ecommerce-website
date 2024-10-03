@@ -1,8 +1,10 @@
 import paytmchecksum from "../paytm/PaytmChecksum.js";
-import { paytmMerchantKey } from "../index.js";
+// import { paytmMerchantKey } from "../index.js";
 import * as formidable from "formidable";
 import https from "https";
 import { v4 as uuid } from "uuid";
+
+export const paytmMerchantKey = process.env.PAYTM_MERCHANT_KEY;
 
 let paytmParams = {
 	"requestType": "Payment",

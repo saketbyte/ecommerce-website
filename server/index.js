@@ -30,17 +30,15 @@ app.use("/", router);
 
 const PORT = process.env.PORT || 8000;
 
-Connection(process.env.DB_URL);
+Connection(String(process.env.DB_URL));
 
 app.listen(PORT, () => console.log(`Server is running on PORT: ${PORT}`));
 
 DefaultData();
 
-export const paytmMerchantKey = process.env.PAYTM_MERCHANT_KEY;
-
-export let paytmParams = {};
+// export const paytmMerchantKey = process.env.PAYTM_MERCHANT_KEY;
+// export let paytmParams = {};
 // let callbackURL = "https://localhost:8000/callback";
-
 // paytmParams = {
 // 	"requestType": "Payment",
 // 	"mid": process.env.PAYTM_MID,
