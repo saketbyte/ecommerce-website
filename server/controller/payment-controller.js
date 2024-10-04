@@ -69,7 +69,7 @@ export const paymentResponse = (request, response) => {
 					let result = JSON.parse(res);
 					console.log(result);
 					// response.redirect(`http://localhost:3000/`);
-					response.redirect(`https://www.ecommerce-website-server-chi.vercel.app/`);
+					response.redirect(`https://www.ecommerce-website-h1qr-18m743c51-samriddh-singhs-projects.vercel.app/`);
 				});
 			});
 			post_req.write(post_data);
