@@ -3,7 +3,7 @@ import * as actionType from "../constants/cartConstants";
 
 // const URL = "http://localhost:8000"
 // const URL = "https://ecommerce-website-kappa-sandy.vercel.app";
-const URL = "https://ecommerce-website-server-chi.vercel.app/";
+const URL = "https://ecommerce-website-server-chi.vercel.app";
 
 export const addToCart = (id, quantity) => async (dispatch) => {
 	try {

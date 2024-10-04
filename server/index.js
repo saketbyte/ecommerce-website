@@ -14,7 +14,8 @@ app.use(
 	cors({
 		// origin: ["https://www.ecommerce-website-h1qr-18m743c51-samriddh-singhs-projects.vercel.app"],
 		// origin: ["https://ecommerce-website-server-chi.vercel.app"],
-		origin: ["https://ecommerce-website-h1qr.vercel.app"],
+		// origin: ["https://ecommerce-website-h1qr.vercel.app"],
+		origin: ["https://ecommerce-website-h1qr-fiacf1etl-samriddh-singhs-projects.vercel.app", "https://ecommerce-website-server-chi.vercel.app/"],
 
 		methods: ["POST", "GET"],
 		credentials: false
