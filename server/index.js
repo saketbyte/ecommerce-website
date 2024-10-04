@@ -15,7 +15,7 @@ app.use(
 		// origin: ["https://www.ecommerce-website-h1qr-18m743c51-samriddh-singhs-projects.vercel.app"],
 		// origin: ["https://ecommerce-website-server-chi.vercel.app"],
 		// origin: ["https://ecommerce-website-h1qr.vercel.app"],
-		origin: ["https://ecommerce-website-h1qr-fiacf1etl-samriddh-singhs-projects.vercel.app", "https://ecommerce-website-server-chi.vercel.app/"],
+		origin: ["https://ecommerce-website-h1qr-fiacf1etl-samriddh-singhs-projects.vercel.app", "https://ecommerce-website-h1qr-4zt9884sa-samriddh-singhs-projects.vercel.app"],
 
 		methods: ["POST", "GET"],
 		credentials: false
