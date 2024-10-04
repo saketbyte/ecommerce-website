@@ -8,7 +8,7 @@ export const getProducts = async (request, response) => {
 		// console.log(products);
 		response.json(products);
 	} catch (error) {
-		resonse.status(500).json({ message: error.message });
+		response.status(500).json({ message: error.message });
 	}
 };
 
