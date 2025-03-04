@@ -70,8 +70,13 @@ export const paymentResponse = (request, response) => {
 				post_res.on("end", function () {
 					let result = JSON.parse(res);
 					console.log(result);
+<<<<<<< HEAD
 					response.redirect(`http://localhost:3000/`);
 					// response.redirect(`https://www.ecommerce-website-h1qr-9iebacq0c-samriddh-singhs-projects.vercel.app/`);
+=======
+					// response.redirect(`http://localhost:3000/`);
+					response.redirect(`https://www.ecommerce-website-h1qr-18m743c51-samriddh-singhs-projects.vercel.app/`);
+>>>>>>> 6be8b1898da09c61bae951fe51aa713e1563d93c
 				});
 			});
 			post_req.write(post_data);

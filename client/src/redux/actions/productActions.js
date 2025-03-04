@@ -5,7 +5,11 @@ import * as actionType from "../constants/productConstant";
 // this double arrow function is from thunk
 const URL = "http://localhost:8000";
 // const URL = "https://ecommerce-website-kappa-sandy.vercel.app";
+<<<<<<< HEAD
 // const URL = "https://www.ecommerce-website-server-q5x5qrruf-samriddh-singhs-projects.vercel.app";
+=======
+const URL = "https://ecommerce-website-server-chi.vercel.app";
+>>>>>>> 6be8b1898da09c61bae951fe51aa713e1563d93c
 
 export const getProducts = () => async (dispatch) => {
 	try {
@@ -14,7 +18,7 @@ export const getProducts = () => async (dispatch) => {
 		dispatch({ type: actionType.GET_PRODUCTS_SUCCESS, payload: data });
 	} catch (error) {
 		dispatch({ type: actionType.GET_PRODUCTS_FAIL, payload: error.message });
-		console.log("Error while calling getProducts API", error.message);
+		console.log("Error while calling getProducts API: ", error.message);
 	}
 };
 
