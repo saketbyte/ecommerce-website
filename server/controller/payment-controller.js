@@ -5,13 +5,15 @@ import https from "https";
 import { v4 as uuid } from "uuid";
 
 export const paytmMerchantKey = process.env.PAYTM_MERCHANT_KEY;
+let callbackURL = "https://localhost:8000/callback";
 
 let paytmParams = {
 	"requestType": "Payment",
 	"mid": process.env.PAYTM_MID,
 	"websiteName": process.env.PAYTM_WEBSITE,
 	"orderId": uuid(),
-	"callbackUrl": "https://www.ecommerce-website-kappa-sandy.vercel.app/callback",
+	"callbackUrl": callbackURL,
+	// "callbackUrl": "https://www.ecommerce-website-kappa-sandy.vercel.app/callback",
 	"txnAmount": "150.00",
 	"custId": process.env.PAYTM_CUST_ID
 };
@@ -68,8 +70,8 @@ export const paymentResponse = (request, response) => {
 				post_res.on("end", function () {
 					let result = JSON.parse(res);
 					console.log(result);
-					// response.redirect(`http://localhost:3000/`);
-					response.redirect(`https://www.ecommerce-website-h1qr-9iebacq0c-samriddh-singhs-projects.vercel.app/`);
+					response.redirect(`http://localhost:3000/`);
+					// response.redirect(`https://www.ecommerce-website-h1qr-9iebacq0c-samriddh-singhs-projects.vercel.app/`);
 				});
 			});
 			post_req.write(post_data);

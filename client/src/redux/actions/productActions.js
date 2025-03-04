@@ -3,9 +3,9 @@ import * as actionType from "../constants/productConstant";
 
 // actions mean to call the api with certain action.
 // this double arrow function is from thunk
-// const URL = "http://localhost:8000";
+const URL = "http://localhost:8000";
 // const URL = "https://ecommerce-website-kappa-sandy.vercel.app";
-const URL = "https://www.ecommerce-website-server-q5x5qrruf-samriddh-singhs-projects.vercel.app";
+// const URL = "https://www.ecommerce-website-server-q5x5qrruf-samriddh-singhs-projects.vercel.app";
 
 export const getProducts = () => async (dispatch) => {
 	try {

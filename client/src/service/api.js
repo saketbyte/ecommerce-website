@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// const URL = "http://localhost:8000";
+const URL = "http://localhost:8000";
 // const URL = "https://ecommerce-website-kappa-sandy.vercel.app";
-const URL = "https://www.ecommerce-website-server-q5x5qrruf-samriddh-singhs-projects.vercel.app/";
+// const URL = "https://www.ecommerce-website-server-q5x5qrruf-samriddh-singhs-projects.vercel.app/";
 
 export const authenticateSignup = async (data) => {
 	try {
